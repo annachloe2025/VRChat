@@ -4,5 +4,7 @@
 
 ## このセクションの構成
 
+- [VRChat 制作環境](vrchat-setup.md) — VCC のセットアップ手順、2021年からの差分
+- [用語集](glossary.md) — 知らない単語に出会ったらここで確認
 - [技術メモ](tech-notes.md) — Unity/VRChat SDK で得た知見、ハマりポイント
 - [アセット一覧](assets.md) — 使用したアセット、出典、ライセンス

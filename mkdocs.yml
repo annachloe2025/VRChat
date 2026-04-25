@@ -74,5 +74,7 @@ nav:
       - progress/index.md
   - リファレンス:
       - reference/index.md
+      - VRChat 制作環境: reference/vrchat-setup.md
+      - 用語集: reference/glossary.md
       - 技術メモ: reference/tech-notes.md
       - アセット一覧: reference/assets.md

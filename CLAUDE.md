@@ -52,7 +52,7 @@ VRChat/
 │   ├── visual-design/    # ヴィジュアル方針・ムードボード
 │   ├── world-spec/       # ワールドの仕様(規模・ギミック・動線)
 │   ├── progress/         # 制作日誌
-│   └── reference/        # 技術メモ・アセット一覧
+│   └── reference/        # 技術メモ・アセット一覧・用語集
 ├── unity/                # Unityプロジェクト(.gitignore)
 ├── blender/              # Blender作業(.gitignore)
 ├── refs/                 # 参考素材(.gitignore)
@@ -73,6 +73,7 @@ VRChat/
 - 新しい決定事項が出たら、このファイルの「決定事項ログ」セクションに追記する
 - ドキュメント生成時は `docs/` 配下に配置、テンプレートに沿った見出し構造を維持
 - **Git操作はサンドボックス側で実行しないこと**(Cowork のWindowsマウント権限制約で中途半端な .git が残る)。Git操作はユーザーに PowerShell コマンドを提示して実行してもらう
+- **日本語を含む既存ファイルの編集は Edit ツールで途中切れすることがある**。Write での全置換、または bash heredoc で書き直す方が確実
 
 ## 決定事項ログ
 
@@ -81,6 +82,8 @@ VRChat/
 | 2026-04-26 | プロジェクト立ち上げ。Pattern 1(Unity/Blender/refs完全ignore)採用 |
 | 2026-04-26 | LFS不採用。重いバイナリは OneDrive 等で別管理 |
 | 2026-04-26 | mkdocs + Material for MkDocs を進捗・世界観可視化のハブに |
+| 2026-04-26 | VRChat 制作環境(VCC前提のモダン手順)を `docs/reference/vrchat-setup.md` に整備 |
+| 2026-04-26 | 用語集 `docs/reference/glossary.md` を運用開始(LFS, VCC, Udon, ClientSim 等) |
 
 ## 未確定事項
 
