@@ -1,0 +1,9 @@
+# 改行コード正規化
+* text=auto eol=lf
+
+# Markdown は明示的に LF
+*.md text eol=lf
+
+# Windows 系設定ファイルは CRLF を維持
+*.bat text eol=crlf
+*.cmd text eol=crlf

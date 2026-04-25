@@ -1,0 +1,55 @@
+# =============================================================
+# VRChat Fantasy World - .gitignore
+# 方針: docs と設定のみ追跡。Unity/Blender/参考素材は完全 ignore。
+# =============================================================
+
+# --- Unity プロジェクト一式(完全除外) ---
+unity/
+
+# --- Blender 作業ファイル一式(完全除外) ---
+blender/
+
+# --- 参考素材(完全除外) ---
+refs/
+
+# --- mkdocs ビルド成果物 ---
+site/
+
+# --- Python 仮想環境・キャッシュ ---
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# --- OS 生成ファイル ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# --- エディタ・IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- 保険として、念のため重量バイナリも明示除外 ---
+*.blend
+*.blend1
+*.fbx
+*.psd
+*.tga
+*.exr
+*.hdr
+*.wav
+*.mp3
+*.ogg
+*.mp4
+*.mov
+*.zip
+*.7z
+*.rar

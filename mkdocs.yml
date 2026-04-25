@@ -1,0 +1,78 @@
+site_name: VRChat Fantasy World
+site_description: 自作ファンタジー小説の世界観をVRChatで可視化するプロジェクト
+site_author: hoehoe
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: ダークモードへ
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードへ
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+plugins:
+  - search:
+      lang: ja
+
+nav:
+  - ホーム: index.md
+  - 世界観:
+      - worldbuilding/index.md
+      - 地理: worldbuilding/geography.md
+      - 歴史: worldbuilding/history.md
+      - 文化・種族: worldbuilding/cultures.md
+  - ヴィジュアル設計:
+      - visual-design/index.md
+      - ムードボード: visual-design/moodboard.md
+      - 建築様式: visual-design/architecture.md
+      - 自然・植生: visual-design/nature.md
+  - ワールド仕様:
+      - world-spec/index.md
+      - スコープ: world-spec/scope.md
+      - 動線・ギミック: world-spec/interactions.md
+  - 制作日誌:
+      - progress/index.md
+  - リファレンス:
+      - reference/index.md
+      - 技術メモ: reference/tech-notes.md
+      - アセット一覧: reference/assets.md
