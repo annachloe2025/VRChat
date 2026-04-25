@@ -15,9 +15,8 @@
 
 - **Unity 2022.3 LTS** + VRChat SDK3 (Worlds)
 - **Blender** (3Dモデリング、blendソースは Git 外で管理)
-- **mkdocs + Material for MkDocs** (世界観・進捗の可視化)
-- **Git** (docs と設定のみ追跡、Unity/Blender 関連は完全 ignore)
-- **GitHub** (将来的にリモート、LFSは使わない)
+- **mkdocs + Material for MkDocs** (世界観・進捗の可視化、GitHub Pages で公開)
+- **Git + GitHub** (docs と設定のみ追跡、Unity/Blender 関連は完全 ignore、LFS不使用)
 
 ## リポジトリ運用方針
 
@@ -25,6 +24,7 @@
 - CLAUDE.md, TASKS.md, README.md
 - docs/ 配下(mkdocs ソース)
 - mkdocs.yml
+- update.bat(更新・公開を一括実行するバッチ)
 - .gitignore, .gitattributes
 
 **追跡しないもの(完全 ignore):**
@@ -33,10 +33,17 @@
 - refs/ — 参考画像・ピンタレスト保存物・ムードボード素材
 
 **バックアップ戦略:**
-- Git追跡対象 → GitHub (将来)
+- Git追跡対象 → GitHub (annachloe2025/VRChat)
 - unity/, blender/, refs/ → OneDrive 等のクラウド同期 or 外付けHDD で別途バックアップ
 
 **LFSは使わない:** 重いバイナリは全部 ignore するため不要。将来必要になったら再検討。
+
+## 公開サイト運用
+
+- リポジトリ: <https://github.com/annachloe2025/VRChat> (public)
+- 公開サイト: <https://annachloe2025.github.io/VRChat/>
+- 更新方法: `update.bat` をダブルクリック → commit + push + `mkdocs gh-deploy --force` を一括実行
+- iPhoneからは公開サイトURLをブックマーク or ホーム画面に追加して閲覧
 
 ## ディレクトリ構成
 
@@ -46,6 +53,7 @@ VRChat/
 ├── TASKS.md              # タスク管理
 ├── README.md             # プロジェクト概要
 ├── mkdocs.yml            # mkdocs 設定
+├── update.bat            # commit + push + gh-deploy を一括実行
 ├── docs/                 # mkdocs ソース
 │   ├── index.md
 │   ├── worldbuilding/    # 世界観設定(地理・歴史・文化)
@@ -72,7 +80,7 @@ VRChat/
 - 世界観に関する質問に答える前に `docs/worldbuilding/` を確認する
 - 新しい決定事項が出たら、このファイルの「決定事項ログ」セクションに追記する
 - ドキュメント生成時は `docs/` 配下に配置、テンプレートに沿った見出し構造を維持
-- **Git操作はサンドボックス側で実行しないこと**(Cowork のWindowsマウント権限制約で中途半端な .git が残る)。Git操作はユーザーに PowerShell コマンドを提示して実行してもらう
+- **Git操作はサンドボックス側で実行しないこと**(Cowork のWindowsマウント権限制約で中途半端な .git が残る)。Git操作はユーザーに PowerShell コマンドを提示するか、`update.bat` を実行してもらう
 - **日本語を含む既存ファイルの編集は Edit ツールで途中切れすることがある**。Write での全置換、または bash heredoc で書き直す方が確実
 
 ## 決定事項ログ
@@ -84,10 +92,11 @@ VRChat/
 | 2026-04-26 | mkdocs + Material for MkDocs を進捗・世界観可視化のハブに |
 | 2026-04-26 | VRChat 制作環境(VCC前提のモダン手順)を `docs/reference/vrchat-setup.md` に整備 |
 | 2026-04-26 | 用語集 `docs/reference/glossary.md` を運用開始(LFS, VCC, Udon, ClientSim 等) |
+| 2026-04-26 | GitHub リポジトリ annachloe2025/VRChat (public) と連携、初回push成功 |
+| 2026-04-26 | update.bat で commit + push + gh-deploy を一括実行する運用に |
 
 ## 未確定事項
 
 - プロジェクトの正式名称(現状「VRChat Fantasy World」は仮称)
 - 小説の Novel フォルダとの連携方法(コピー / 抽出 / 参照)
-- GitHub リモート化のタイミング
 - Quest 対応の有無
