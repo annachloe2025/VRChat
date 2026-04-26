@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <!-- iOS Safari: ホーム画面追加時のアイコン -->
+  <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | url }}">
+
+  <!-- ファビコン(複数サイズ) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon-32.png' | url }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ 'assets/favicon-96.png' | url }}">
+
+  <!-- Android Chrome / PWA アイコン -->
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icon-192.png' | url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icon-512.png' | url }}">
+
+  <!-- iOS ホーム画面表示時の見え方 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="VRChat FW">
+
+  <!-- ブラウザのテーマカラー(モバイルブラウザのアドレスバー色) -->
+  <meta name="theme-color" content="#3a2360">
+{% endblock %}
