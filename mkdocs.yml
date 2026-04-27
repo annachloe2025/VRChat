@@ -64,6 +64,7 @@ nav:
       - 地理: worldbuilding/geography.md
       - 歴史: worldbuilding/history.md
       - 文化・種族: worldbuilding/cultures.md
+      - VR用世界観抜粋: worldbuilding/excerpts/world-summary-for-vr.md
   - ヴィジュアル設計:
       - visual-design/index.md
       - ムードボード: visual-design/moodboard.md
@@ -72,6 +73,7 @@ nav:
   - ワールド仕様:
       - world-spec/index.md
       - スコープ: world-spec/scope.md
+      - 第1ワールド「辺境の村」: world-spec/frontier-village.md
       - 動線・ギミック: world-spec/interactions.md
   - 制作日誌:
       - progress/index.md

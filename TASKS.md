@@ -3,29 +3,31 @@
 VRChat Fantasy World プロジェクトのタスク管理。
 完了したものは `[x]` でチェック、`(完了日)` を末尾に付ける。
 
-## Now (今やる)
+## Now (今やる) — 辺境の村 v0.1 ブロックアウト
 
-- [ ] プロジェクト名を決める(仮称: VRChat Fantasy World)
-- [ ] update.bat を初回実行して GitHub Pages 公開
-- [ ] iPhone から公開サイトを確認、ホーム画面に追加
-- [ ] VCC をインストールして VRChatアカウントでログイン
-- [ ] VCC で空の Worlds プロジェクトを作成 → `unity/` 配下に配置
-- [ ] 空ワールドを Build & Test で End-to-End 動作確認
-- [ ] Build & Publish (Private) で自分のVRChatアカウントにアップロード確認
-- [ ] 小説の世界観設定を docs/worldbuilding/ に整理開始
-- [ ] ヴィジュアル方針のムードボード作成(refs/ に集める)
+- [ ] アップロードしたテストワールドを VRChat 実機で訪問確認
+- [ ] Release Status が Private になっているか公式サイトで確認
+- [ ] Unity に新規シーン作成、VRCWorld プレハブ配置
+- [ ] プリミティブ(Cube)で防壁・家・見張り台・集会所・井戸を配置
+- [ ] スポーン位置を門の外に配置、スケール感を ClientSim で確認
+- [ ] フェーズ1 完了時点で Build & Test → 歩いて確認
 
-## Next (次にやる)
+## Next (次にやる) — 辺境の村 v0.2 環境構築
 
-- [ ] ワールドのスコープ決定(街1つ? ダンジョン? 神殿? など)
-- [ ] VRChat SDK3 (Worlds) のインポート確認
-- [ ] 既存のVRボクシングプロジェクトとの干渉がないか確認
+- [ ] HDRI Skybox を黄昏グラデに差し替え
+- [ ] Directional Light を残照(月光寄り)で設定
+- [ ] Terrain で外側の地形・遠景の樹木を配置
+- [ ] Fog を遠景にうっすら、空気感を整える
+- [ ] フェーズ2 完了時点で Build & Test
 
 ## Later (将来)
 
+- [ ] 辺境の村 v0.3 ─ 建造物のメッシュ置き換え、装飾、ライト
+- [ ] 辺境の村 v0.5 ─ 環境音 / BGM / 看板テキスト追加、Build & Publish
+- [ ] 辺境の村 v1.0 ─ お披露目できる完成度、Community Labs / Public 検討
 - [ ] Quest 対応の検討
 - [ ] 小説本編の Novel フォルダとの連携方針確定
-- [ ] サイトのアクセス制御(必要なら Cloudflare Pages へ移行)
+- [ ] 第2ワールド候補(王宮、主人公の家、禁域 入口、公爵家、王都ルメリア)
 
 ## Done
 
@@ -37,3 +39,14 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [x] GitHub リポジトリ annachloe2025/VRChat と接続、初回 push 完了 (2026-04-26)
 - [x] update.bat 作成(commit + push + gh-deploy をワンクリック実行) (2026-04-26)
 - [x] プロジェクトセットアップガイドを docs/reference/project-setup.md にまとめる (2026-04-26)
+- [x] GitHub Pages にサイト公開、iPhone から閲覧可能に (2026-04-27)
+- [x] オリジナルプレースホルダーロゴ(VRC)を作成、各サイズに展開 (2026-04-27)
+- [x] iOS apple-touch-icon と meta タグを overrides/main.html で注入 (2026-04-27)
+- [x] VCC をインストール、VRChat アカウントでログイン (2026-04-27)
+- [x] VCC で空の Worlds プロジェクトを作成、Unity 2022.3.22f1 で起動 (2026-04-27)
+- [x] VRChat SDK の Layers と Collision Matrix を初期セットアップ (2026-04-27)
+- [x] 初回ワールドを Build & Publish (Private) でアップロード成功 (2026-04-27)
+- [x] ここまでの進捗を docs/progress/2026-04-27-first-upload.md に記録 (2026-04-27)
+- [x] Novel フォルダの設定資料を読み、VR化戦略を立案 (2026-04-27)
+- [x] 第1ワールドを「辺境の村」に決定、詳細設計書を docs/world-spec/frontier-village.md に作成 (2026-04-27)
+- [x] VR用世界観抜粋を docs/worldbuilding/excerpts/world-summary-for-vr.md に作成 (2026-04-27)
