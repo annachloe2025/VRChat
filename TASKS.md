@@ -3,13 +3,14 @@
 VRChat Fantasy World プロジェクトのタスク管理。
 完了したものは `[x]` でチェック、`(完了日)` を末尾に付ける。
 
-## Now (今やる) — 辺境の村 v0.1 仕上げ
+## Now (今やる) — 辺境の村 v0.2 環境構築中
 
-- [ ] Unity の Village を ClientSim で歩いて確認
+- [ ] AllSky Free から黄昏系 Skybox を 1-2 個に絞って Import、シーンに適用
+- [ ] Terrain に草・土・砂利の塗り分け(中央広場・道・川岸)
+- [ ] Tiled に 門 / 術式石①② / スポーン地点 / 見張り台 を追加配置 → 再Import
 - [ ] スポーン位置を村の門付近に調整
-- [ ] Tiled に 門 / 術式石①② / スポーン地点 / 見張り台 を追加配置
-- [ ] 再 Import で反映確認
-- [ ] Build & Test (or Build & Publish Private) でアップロード確認
+- [ ] 仮アセット(Stylized Trees の家代わりや、別の建物アセット)で家プレハブを試す
+- [ ] Build & Test で歩いてみる、容量再確認
 
 ## Next (次にやる) — 辺境の村 v0.2 環境構築
 
@@ -55,3 +56,7 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [x] .tmj を Unity Assets/Maps/ に移動 (2026-04-28)
 - [x] C# インポータ VillageImporter.cs を作成、メニューから Cube 自動配置 (2026-04-28)
 - [x] Y軸反転バグを修正、Tiled の北南が Unity の奥手前と一致 (2026-04-28)
+- [x] Terrain を 200×200m で作成、Diffuse + Normal の Layer 設定 (2026-04-28)
+- [x] Stylized Trees アセット導入、Paint Trees の操作習熟 (2026-04-28)
+- [x] ビルドサイズ確認 (Terrain あり 100MB / なし 70MB、現状 PC OK) (2026-04-28)
+- [x] Skybox の選定方針確定(AllSky Free から黄昏系を選別) (2026-04-28)

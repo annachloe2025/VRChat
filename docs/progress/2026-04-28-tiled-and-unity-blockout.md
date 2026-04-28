@@ -83,3 +83,50 @@
 Novel フォルダの参照を始めたら、自分が思っていた以上に世界観の量と質があった。これだけ作り込まれた設定を VR で歩けるようにする価値は大きい。
 
 ChatGPT のロゴ事件、Y軸反転の間違い、Edit の途中切れ、王宮プロットによる分類器反応など、 **全工程に小さな罠が散りばめられていた**。 CLAUDE.md にこれらを記録しているので、次のセッションでは同じ罠を踏まずに済む。
+
+---
+
+## 本日の追加作業(同日後半: 環境構築フェーズ着手)
+
+### Terrain 作成と地面の整備
+
+- Unity の Terrain で **村の地面と外側** を作成
+- サイズ: **200×200m**(村+周囲50mのバッファ)、位置 (-50, 0, -50)
+- Terrain Layers でテクスチャ適用:
+    - **Diffuse + Normal Map** の組み合わせを Layer に設定
+    - 1m=32px の単位は Tiled と Unity 共通で揃え
+- レイヤー概念の整理:
+    - Layer 0(リスト一番上)= ベース、地面全体に自動適用
+    - Layer 1, 2... = ブラシで重ね塗り
+    - 「Create Layer」=テクスチャ画像から新規作成、「Add Layer」=既存 .terrainlayer を追加
+
+### Stylized Trees パック導入
+
+- **Stylized Trees - Cartoon Lowpoly Mobile Pack Free** を Asset Store から取得
+- Mobile 最適化版なので VRChat 軽量、Built-in Render Pipeline 互換
+- Paint Trees で配置 → 大きいブラシ + Shift で全消去できる
+
+### Skybox 検討中
+
+- **AllSky Free** をダウンロード、Import 時に黄昏系を選別する方針
+- 全部 Import すると重いので、Asset Store ページのプレビューで黄昏系1〜2個に絞る予定
+
+### ビルドサイズ確認
+
+- **Terrain あり: 約 100MB**
+- **Terrain なし: 約 70MB**
+- → Terrain が約 30MB(妥当範囲、軽量化余地あり)
+- PC ワールドとしては問題なし、目標 50MB は完成形に向けての軽量化で対応
+
+### 学んだこと(操作 Tips)
+
+- Terrain ペイントブラシの dropdown は「Stamp Terrain」じゃなくて「**Raise or Lower Terrain**」を選ぶ
+- レイヤー色の設定は「**オブジェクトレイヤー**」セクションの「色」(Tint Color じゃない)
+- Tiled は無料の業界標準、TMJ は JSON でテキスト編集可能
+- `.tmj` ファイルは Unity Assets/Maps/ に置けば Unity から読める
+
+### サイトの公開について
+
+- mkdocs サイトは <https://annachloe2025.github.io/VRChat/> で稼働中
+- ドキュメントを更新したら `update.bat` で commit + push + gh-deploy が走る
+
