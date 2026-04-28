@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 820" xmlns="http://www.w3.org/2000/svg" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5a9eb0"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c47a3d"/>
+    </marker>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e8e4d8" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="field" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L8 0" stroke="#7a8a4a" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="820" fill="#faf7ee"/>
+  <rect width="1000" height="820" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="500" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#3a2860">辺境の村 — 配置図(上から見た図)</text>
+  <text x="500" y="52" text-anchor="middle" font-size="12" fill="#7a6a5a">スケール: 1グリッド = 5m / 縮尺 1:100 / 赤線通りの水路レイアウト</text>
+
+  <!-- Compass -->
+  <g transform="translate(940, 100)">
+    <circle r="32" fill="white" stroke="#3a2860" stroke-width="1.5"/>
+    <polygon points="0,-22 -8,0 0,-6 8,0" fill="#c53030"/>
+    <polygon points="0,22 -8,0 0,6 8,0" fill="#3a2860"/>
+    <text y="-36" text-anchor="middle" font-size="14" font-weight="bold" fill="#3a2860">N</text>
+    <text y="46" text-anchor="middle" font-size="11" fill="#3a2860">S</text>
+    <text x="-40" y="4" text-anchor="middle" font-size="11" fill="#3a2860">W</text>
+    <text x="40" y="4" text-anchor="middle" font-size="11" fill="#3a2860">E</text>
+  </g>
+
+  <!-- ========== 川 (river, north to south, west side) ========== -->
+  <rect x="30" y="80" width="50" height="720" fill="#86b8d0" opacity="0.7"/>
+  <rect x="42" y="80" width="2" height="720" fill="#1e4d6b" opacity="0.3"/>
+  <rect x="66" y="80" width="2" height="720" fill="#1e4d6b" opacity="0.3"/>
+  <text x="55" y="100" text-anchor="middle" font-size="12" fill="#1e4d6b" font-weight="bold">川</text>
+  <text x="55" y="115" text-anchor="middle" font-size="10" fill="#1e4d6b">↓流</text>
+
+  <!-- ===== 赤線① 上の横水路: 川から東へ、防壁の上を通って中央上に至る ===== -->
+  <rect x="80" y="124" width="400" height="14" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1.5"/>
+  <line x1="80" y1="131" x2="475" y2="131" stroke="#1e4d6b" stroke-width="0.5" marker-end="url(#arrow)"/>
+  <text x="220" y="118" text-anchor="middle" font-size="10" fill="#1e4d6b" font-weight="bold">取水路(防壁外、地表)</text>
+
+  <!-- 土守の小屋(取水路の途中) -->
+  <rect x="115" y="148" width="35" height="28" fill="#a8825a" stroke="#5e4838" stroke-width="1.5"/>
+  <text x="132" y="190" text-anchor="middle" font-size="9" fill="#3a2818">土守小屋</text>
+
+  <!-- 術式石①(取水路の終端、村に入る前) -->
+  <circle cx="450" cy="131" r="11" fill="#9b7bd9" stroke="#5d3a9a" stroke-width="1.5"/>
+  <circle cx="450" cy="131" r="4" fill="#fff" opacity="0.7"/>
+  <text x="450" y="160" text-anchor="middle" font-size="11" fill="#5d3a9a" font-weight="bold">術式石①</text>
+  <text x="450" y="172" text-anchor="middle" font-size="9" fill="#5d3a9a">取水浄化</text>
+
+  <!-- ===== 赤線② 縦の中央水路(村を北→南に縦断) ===== -->
+  <!-- 上の横水路から下に折れて村に入る、村の中央を縦断 -->
+  <!-- 折れ部分: 横水路 (y=124-138) と縦水路 (x=473-487) の合流 -->
+  <rect x="473" y="138" width="14" height="572" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1.5"/>
+  <line x1="480" y1="138" x2="480" y2="705" stroke="#1e4d6b" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+  <!-- ========== 防壁 outer (60m x 50m inside) ========== -->
+  <rect x="200" y="220" width="600" height="500" fill="#d8c4a0" stroke="#7a5a3d" stroke-width="1"/>
+  <rect x="210" y="230" width="580" height="480" fill="#faf7ee" stroke="none"/>
+  <text x="500" y="216" text-anchor="middle" font-size="11" fill="#5e4838">防壁(土魔法成型 / 高さ3-4m / 厚さ1m)</text>
+
+  <!-- 縦水路は防壁を貫通: 北の水門 -->
+  <rect x="470" y="220" width="20" height="10" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1"/>
+  <text x="510" y="228" text-anchor="start" font-size="9" fill="#1e4d6b">北の水門</text>
+
+  <!-- ===== 赤丸 飲み水ため池(村の中央左寄り) ===== -->
+  <ellipse cx="370" cy="460" rx="50" ry="45" fill="#c8e0e8" stroke="#5a9eb0" stroke-width="2.5"/>
+  <ellipse cx="370" cy="460" rx="42" ry="37" fill="none" stroke="#5a9eb0" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <text x="370" y="455" text-anchor="middle" font-size="12" fill="#1e4d6b" font-weight="bold">飲み水池</text>
+  <text x="370" y="470" text-anchor="middle" font-size="10" fill="#1e4d6b">10×9m</text>
+
+  <!-- 中央水路から池への分岐(短い接続水路) -->
+  <rect x="420" y="455" width="55" height="10" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1"/>
+  <line x1="475" y1="460" x2="423" y2="460" stroke="#1e4d6b" stroke-width="0.5" marker-end="url(#arrow)"/>
+  <text x="446" y="450" text-anchor="middle" font-size="9" fill="#1e4d6b">分岐</text>
+
+  <!-- ===== 縦水路は南の水門で村の外へ ===== -->
+  <rect x="470" y="710" width="20" height="10" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1"/>
+  <text x="510" y="718" text-anchor="start" font-size="9" fill="#1e4d6b">南の水門</text>
+
+  <!-- ===== 赤線③ 下の横水路: 南の水門から外へ出て、左に向かって川下まで ===== -->
+  <rect x="80" y="745" width="400" height="14" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1.5"/>
+  <line x1="475" y1="752" x2="80" y2="752" stroke="#1e4d6b" stroke-width="0.5" marker-end="url(#arrow)"/>
+  <!-- 縦水路から下水路への接続(L字に折れる) -->
+  <rect x="473" y="720" width="14" height="32" fill="#86b8d0" stroke="#5a9eb0" stroke-width="1.5"/>
+
+  <text x="280" y="740" text-anchor="middle" font-size="10" fill="#1e4d6b" font-weight="bold">出水路(防壁外、川下へ)</text>
+
+  <!-- 術式石②(出水路の途中) -->
+  <circle cx="220" cy="752" r="11" fill="#9b7bd9" stroke="#5d3a9a" stroke-width="1.5"/>
+  <circle cx="220" cy="752" r="4" fill="#fff" opacity="0.7"/>
+  <text x="220" y="780" text-anchor="middle" font-size="11" fill="#5d3a9a" font-weight="bold">術式石②</text>
+  <text x="220" y="792" text-anchor="middle" font-size="9" fill="#5d3a9a">下水浄化</text>
+
+  <!-- 下水ため池(出水路の途中、術式石②の手前) -->
+  <ellipse cx="320" cy="752" rx="45" ry="22" fill="#7a8a6a" stroke="#4a5a3a" stroke-width="2"/>
+  <text x="320" y="751" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">下水ため池</text>
+  <text x="320" y="763" text-anchor="middle" font-size="8" fill="#fff">8×4m</text>
+
+  <!-- ========== 見張り台 A (NW corner) ========== -->
+  <rect x="200" y="220" width="30" height="30" fill="#a8825a" stroke="#5e4838" stroke-width="1.5"/>
+  <line x1="207" y1="227" x2="223" y2="243" stroke="#5e4838" stroke-width="0.5"/>
+  <line x1="223" y1="227" x2="207" y2="243" stroke="#5e4838" stroke-width="0.5"/>
+  <text x="215" y="265" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">見張りA</text>
+
+  <!-- ========== 見張り台 B (NE corner) ========== -->
+  <rect x="770" y="220" width="30" height="30" fill="#a8825a" stroke="#5e4838" stroke-width="1.5"/>
+  <line x1="777" y1="227" x2="793" y2="243" stroke="#5e4838" stroke-width="0.5"/>
+  <line x1="793" y1="227" x2="777" y2="243" stroke="#5e4838" stroke-width="0.5"/>
+  <text x="785" y="265" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">見張りB</text>
+
+  <!-- ========== 家1, 家2 (north row) ========== -->
+  <rect x="240" y="290" width="50" height="40" fill="#c4a86f" stroke="#7a5a3d" stroke-width="1.5"/>
+  <text x="265" y="315" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家1</text>
+  <text x="265" y="345" text-anchor="middle" font-size="8" fill="#7a6a5a">5×4m</text>
+
+  <rect x="320" y="290" width="50" height="40" fill="#c4a86f" stroke="#7a5a3d" stroke-width="1.5"/>
+  <text x="345" y="315" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家2</text>
+
+  <!-- ========== 集会所 (center-east, north of pond) ========== -->
+  <rect x="555" y="280" width="100" height="60" fill="#e0c79c" stroke="#7a5a3d" stroke-width="2"/>
+  <text x="605" y="307" text-anchor="middle" font-size="13" font-weight="bold" fill="#3a2818">集会所</text>
+  <text x="605" y="324" text-anchor="middle" font-size="9" fill="#5e4838">10×6m / 高さ4m</text>
+  <rect x="600" y="340" width="10" height="2" fill="#3a2818"/>
+
+  <!-- ========== 畑 (中央水路の東側、縦水路の右隣) ========== -->
+  <rect x="555" y="380" width="80" height="60" fill="url(#field)"/>
+  <rect x="555" y="380" width="80" height="60" fill="#c8d6a0" fill-opacity="0.5" stroke="#7a8a4a" stroke-width="1.5"/>
+  <text x="595" y="412" text-anchor="middle" font-size="12" font-weight="bold" fill="#5a6a3a">畑</text>
+  <text x="595" y="428" text-anchor="middle" font-size="9" fill="#5a6a3a">8×6m</text>
+
+  <!-- ========== 家3, 家4 (south row, west) ========== -->
+  <rect x="240" y="540" width="50" height="40" fill="#c4a86f" stroke="#7a5a3d" stroke-width="1.5"/>
+  <text x="265" y="565" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家3</text>
+
+  <rect x="240" y="600" width="50" height="40" fill="#c4a86f" stroke="#7a5a3d" stroke-width="1.5"/>
+  <text x="265" y="625" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家4</text>
+
+  <!-- ========== 家5 (south, east of channel) ========== -->
+  <rect x="555" y="540" width="50" height="40" fill="#c4a86f" stroke="#7a5a3d" stroke-width="1.5"/>
+  <text x="580" y="565" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家5</text>
+
+  <!-- ========== 家畜囲い (south row, east) ========== -->
+  <rect x="650" y="540" width="60" height="50" fill="#deceae" stroke="#7a5a3d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="680" y="568" text-anchor="middle" font-size="10" font-weight="bold" fill="#3a2818">家畜囲い</text>
+  <text x="680" y="582" text-anchor="middle" font-size="8" fill="#7a6a5a">6×5m</text>
+
+  <!-- ========== 階段 ========== -->
+  <g stroke="#5e4838" stroke-width="1" fill="none">
+    <line x1="240" y1="240" x2="240" y2="280"/>
+    <line x1="244" y1="242" x2="244" y2="278"/>
+    <line x1="248" y1="244" x2="248" y2="276"/>
+  </g>
+  <text x="244" y="295" text-anchor="middle" font-size="8" fill="#5e4838">階段</text>
+
+  <!-- ========== 門 (south side, 中央水路の少し東) ========== -->
+  <rect x="600" y="715" width="60" height="10" fill="#7a5a3d" stroke="#3a2818" stroke-width="1.5"/>
+  <line x1="605" y1="720" x2="615" y2="720" stroke="#fff" stroke-width="1.5"/>
+  <line x1="645" y1="720" x2="655" y2="720" stroke="#fff" stroke-width="1.5"/>
+  <text x="630" y="744" text-anchor="middle" font-size="12" font-weight="bold" fill="#3a2818">門(両開き 6m)</text>
+
+  <!-- 門の上の見張り台 -->
+  <rect x="617" y="708" width="26" height="10" fill="#a8825a" stroke="#5e4838" stroke-width="1"/>
+
+  <!-- ========== Spawn point (門の南) ========== -->
+  <circle cx="630" cy="775" r="9" fill="#fff5d8" stroke="#5d3a9a" stroke-width="2"/>
+  <circle cx="630" cy="775" r="4" fill="#9b7bd9"/>
+  <text x="630" y="803" text-anchor="middle" font-size="10" font-weight="bold" fill="#5d3a9a">★ スポーン</text>
+
+  <!-- 街道 -->
+  <line x1="630" y1="784" x2="630" y2="815" stroke="#7a5a3d" stroke-width="3" stroke-dasharray="6,4"/>
+  <text x="675" y="800" font-size="9" fill="#5e4838">街道→森</text>
+
+  <!-- 汚泥置き場(下水池の脇) -->
+  <rect x="280" y="780" width="40" height="20" fill="none" stroke="#c47a3d" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="300" y="795" text-anchor="middle" font-size="9" fill="#7a4a1a">汚泥置場</text>
+  <line x1="320" y1="790" x2="555" y2="445" stroke="#c47a3d" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrowOrange)"/>
+  <text x="450" y="640" font-size="9" fill="#7a4a1a" transform="rotate(-50 450 640)">畑へ運搬</text>
+
+  <!-- ========== Distance markers ========== -->
+  <g stroke="#666" stroke-width="0.6" fill="#444">
+    <line x1="200" y1="680" x2="200" y2="695"/>
+    <line x1="800" y1="680" x2="800" y2="695"/>
+    <line x1="200" y1="687" x2="800" y2="687"/>
+  </g>
+  <text x="500" y="703" text-anchor="middle" font-size="10" fill="#444">防壁内 60m</text>
+
+  <g stroke="#666" stroke-width="0.6" fill="#444">
+    <line x1="180" y1="220" x2="180" y2="720"/>
+    <line x1="175" y1="220" x2="185" y2="220"/>
+    <line x1="175" y1="720" x2="185" y2="720"/>
+  </g>
+  <text x="170" y="475" text-anchor="middle" font-size="10" fill="#444" transform="rotate(-90 170 475)">防壁内 50m</text>
+
+  <!-- ========== Scale bar ========== -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="100" height="6" fill="#3a2860"/>
+    <rect x="0" y="0" width="50" height="6" fill="#fff" stroke="#3a2860" stroke-width="0.5"/>
+    <line x1="0" y1="-3" x2="0" y2="9" stroke="#3a2860" stroke-width="1"/>
+    <line x1="50" y1="-3" x2="50" y2="9" stroke="#3a2860" stroke-width="1"/>
+    <line x1="100" y1="-3" x2="100" y2="9" stroke="#3a2860" stroke-width="1"/>
+    <text x="0" y="-6" text-anchor="middle" font-size="9" fill="#3a2860">0</text>
+    <text x="50" y="-6" text-anchor="middle" font-size="9" fill="#3a2860">5m</text>
+    <text x="100" y="-6" text-anchor="middle" font-size="9" fill="#3a2860">10m</text>
+  </g>
+
+  <!-- ========== 水の流れ説明 ========== -->
+  <g transform="translate(810, 80)">
+    <rect x="-5" y="-15" width="180" height="280" fill="white" stroke="#3a2860" stroke-width="1" rx="4"/>
+    <text x="85" y="0" text-anchor="middle" font-size="11" font-weight="bold" fill="#3a2860">水の流れ</text>
+    <text x="0" y="18" font-size="9" fill="#3a2818">①川 → 取水路(東へ)</text>
+    <text x="0" y="32" font-size="9" fill="#3a2818">②術式石①で浄化</text>
+    <text x="0" y="46" font-size="9" fill="#3a2818">③北の水門で村に入る</text>
+    <text x="0" y="60" font-size="9" fill="#3a2818">④縦水路を南へ流下</text>
+    <text x="0" y="74" font-size="9" fill="#3a2818">⑤途中で池へ分岐</text>
+    <text x="0" y="88" font-size="9" fill="#3a2818">⑥南の水門で村の外へ</text>
+    <text x="0" y="102" font-size="9" fill="#3a2818">⑦下水ため池(西へ)</text>
+    <text x="0" y="116" font-size="9" fill="#3a2818">⑧術式石②で浄化</text>
+    <text x="0" y="130" font-size="9" fill="#3a2818">⑨川下に戻す</text>
+
+    <text x="85" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#3a2860">凡例</text>
+    <rect x="0" y="165" width="18" height="8" fill="#86b8d0" opacity="0.7"/>
+    <text x="22" y="172" font-size="9" fill="#3a2818">水路・川(きれい)</text>
+    <ellipse cx="9" cy="186" rx="9" ry="5" fill="#c8e0e8" stroke="#5a9eb0"/>
+    <text x="22" y="189" font-size="9" fill="#3a2818">飲み水ため池</text>
+    <ellipse cx="9" cy="202" rx="9" ry="5" fill="#7a8a6a" stroke="#4a5a3a"/>
+    <text x="22" y="205" font-size="9" fill="#3a2818">下水ため池</text>
+    <circle cx="9" cy="220" r="6" fill="#9b7bd9" stroke="#5d3a9a"/>
+    <text x="22" y="223" font-size="9" fill="#3a2818">浄化の術式石</text>
+    <rect x="0" y="234" width="18" height="10" fill="#c4a86f" stroke="#7a5a3d"/>
+    <text x="22" y="243" font-size="9" fill="#3a2818">民家</text>
+    <circle cx="9" cy="258" r="6" fill="#fff5d8" stroke="#5d3a9a" stroke-width="2"/>
+    <text x="22" y="261" font-size="9" fill="#3a2818">スポーン</text>
+  </g>
+</svg>

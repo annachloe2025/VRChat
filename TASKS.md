@@ -3,14 +3,13 @@
 VRChat Fantasy World プロジェクトのタスク管理。
 完了したものは `[x]` でチェック、`(完了日)` を末尾に付ける。
 
-## Now (今やる) — 辺境の村 v0.1 ブロックアウト
+## Now (今やる) — 辺境の村 v0.1 仕上げ
 
-- [ ] アップロードしたテストワールドを VRChat 実機で訪問確認
-- [ ] Release Status が Private になっているか公式サイトで確認
-- [ ] Unity に新規シーン作成、VRCWorld プレハブ配置
-- [ ] プリミティブ(Cube)で防壁・家・見張り台・集会所・井戸を配置
-- [ ] スポーン位置を門の外に配置、スケール感を ClientSim で確認
-- [ ] フェーズ1 完了時点で Build & Test → 歩いて確認
+- [ ] Unity の Village を ClientSim で歩いて確認
+- [ ] スポーン位置を村の門付近に調整
+- [ ] Tiled に 門 / 術式石①② / スポーン地点 / 見張り台 を追加配置
+- [ ] 再 Import で反映確認
+- [ ] Build & Test (or Build & Publish Private) でアップロード確認
 
 ## Next (次にやる) — 辺境の村 v0.2 環境構築
 
@@ -26,7 +25,6 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [ ] 辺境の村 v0.5 ─ 環境音 / BGM / 看板テキスト追加、Build & Publish
 - [ ] 辺境の村 v1.0 ─ お披露目できる完成度、Community Labs / Public 検討
 - [ ] Quest 対応の検討
-- [ ] 小説本編の Novel フォルダとの連携方針確定
 - [ ] 第2ワールド候補(王宮、主人公の家、禁域 入口、公爵家、王都ルメリア)
 
 ## Done
@@ -46,7 +44,14 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [x] VCC で空の Worlds プロジェクトを作成、Unity 2022.3.22f1 で起動 (2026-04-27)
 - [x] VRChat SDK の Layers と Collision Matrix を初期セットアップ (2026-04-27)
 - [x] 初回ワールドを Build & Publish (Private) でアップロード成功 (2026-04-27)
-- [x] ここまでの進捗を docs/progress/2026-04-27-first-upload.md に記録 (2026-04-27)
 - [x] Novel フォルダの設定資料を読み、VR化戦略を立案 (2026-04-27)
 - [x] 第1ワールドを「辺境の村」に決定、詳細設計書を docs/world-spec/frontier-village.md に作成 (2026-04-27)
 - [x] VR用世界観抜粋を docs/worldbuilding/excerpts/world-summary-for-vr.md に作成 (2026-04-27)
+- [x] 水回りの仕組みを組み込んだ立体的な村設計に進化 (2026-04-27)
+- [x] CLAUDE.md に Novel の「読まないファイル」リストを明記 (2026-04-27)
+- [x] Tiled Map Editor をインストール、辺境の村のオブジェクト配置 (2026-04-28)
+- [x] Tiled .tmj を整地スクリプトで 1mグリッドスナップ、壁・水路を 2m 統一 (2026-04-28)
+- [x] 民家を 10×10m × 4軒、畑を 16×20m × 2枚に統一 (2026-04-28)
+- [x] .tmj を Unity Assets/Maps/ に移動 (2026-04-28)
+- [x] C# インポータ VillageImporter.cs を作成、メニューから Cube 自動配置 (2026-04-28)
+- [x] Y軸反転バグを修正、Tiled の北南が Unity の奥手前と一致 (2026-04-28)
