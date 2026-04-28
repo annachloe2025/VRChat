@@ -1407,6 +1407,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本日の追加作業(同日後半: 環境構築フェーズ着手)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="本日の追加作業(同日後半: 環境構築フェーズ着手)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terrain 作成と地面の整備
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stylized-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stylized Trees パック導入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skybox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skybox 検討中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ビルドサイズ確認
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学んだこと(操作 Tips)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        サイトの公開について
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1512,6 +1595,54 @@
 <p>「世界観を Tiled でデザイン → Unity で自動ブロックアウト」というデータ駆動なワークフローが今日完成した。これは、世界観を変えたいときに Tiled を編集するだけで Unity 側が即時に追従するということで、 <strong>設計と実装の距離がほぼゼロ</strong> になった。</p>
 <p>Novel フォルダの参照を始めたら、自分が思っていた以上に世界観の量と質があった。これだけ作り込まれた設定を VR で歩けるようにする価値は大きい。</p>
 <p>ChatGPT のロゴ事件、Y軸反転の間違い、Edit の途中切れ、王宮プロットによる分類器反応など、 <strong>全工程に小さな罠が散りばめられていた</strong>。 CLAUDE.md にこれらを記録しているので、次のセッションでは同じ罠を踏まずに済む。</p>
+<hr />
+<h2 id="_7">本日の追加作業(同日後半: 環境構築フェーズ着手)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="terrain">Terrain 作成と地面の整備<a class="headerlink" href="#terrain" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unity の Terrain で <strong>村の地面と外側</strong> を作成</li>
+<li>サイズ: <strong>200×200m</strong>(村+周囲50mのバッファ)、位置 (-50, 0, -50)</li>
+<li>Terrain Layers でテクスチャ適用:<ul>
+<li><strong>Diffuse + Normal Map</strong> の組み合わせを Layer に設定</li>
+<li>1m=32px の単位は Tiled と Unity 共通で揃え</li>
+</ul>
+</li>
+<li>レイヤー概念の整理:<ul>
+<li>Layer 0(リスト一番上)= ベース、地面全体に自動適用</li>
+<li>Layer 1, 2... = ブラシで重ね塗り</li>
+<li>「Create Layer」=テクスチャ画像から新規作成、「Add Layer」=既存 .terrainlayer を追加</li>
+</ul>
+</li>
+</ul>
+<h3 id="stylized-trees">Stylized Trees パック導入<a class="headerlink" href="#stylized-trees" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Stylized Trees - Cartoon Lowpoly Mobile Pack Free</strong> を Asset Store から取得</li>
+<li>Mobile 最適化版なので VRChat 軽量、Built-in Render Pipeline 互換</li>
+<li>Paint Trees で配置 → 大きいブラシ + Shift で全消去できる</li>
+</ul>
+<h3 id="skybox">Skybox 検討中<a class="headerlink" href="#skybox" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>AllSky Free</strong> をダウンロード、Import 時に黄昏系を選別する方針</li>
+<li>全部 Import すると重いので、Asset Store ページのプレビューで黄昏系1〜2個に絞る予定</li>
+</ul>
+<h3 id="_8">ビルドサイズ確認<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Terrain あり: 約 100MB</strong></li>
+<li><strong>Terrain なし: 約 70MB</strong></li>
+<li>→ Terrain が約 30MB(妥当範囲、軽量化余地あり)</li>
+<li>PC ワールドとしては問題なし、目標 50MB は完成形に向けての軽量化で対応</li>
+</ul>
+<h3 id="tips">学んだこと(操作 Tips)<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Terrain ペイントブラシの dropdown は「Stamp Terrain」じゃなくて「<strong>Raise or Lower Terrain</strong>」を選ぶ</li>
+<li>レイヤー色の設定は「<strong>オブジェクトレイヤー</strong>」セクションの「色」(Tint Color じゃない)</li>
+<li>Tiled は無料の業界標準、TMJ は JSON でテキスト編集可能</li>
+<li><code>.tmj</code> ファイルは Unity Assets/Maps/ に置けば Unity から読める</li>
+</ul>
+<h3 id="_9">サイトの公開について<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mkdocs サイトは <a href="https://annachloe2025.github.io/VRChat/">https://annachloe2025.github.io/VRChat/</a> で稼働中</li>
+<li>ドキュメントを更新したら <code>update.bat</code> で commit + push + gh-deploy が走る</li>
+</ul>
 
 
 
