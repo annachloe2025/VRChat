@@ -13,28 +13,24 @@
       
       
       
-        <link rel="prev" href="../world-spec/interactions/">
-      
-      
-        <link rel="next" href="../reference/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon-32.png">
+      <link rel="icon" href="../../assets/favicon-32.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>制作日誌 - VRChat Fantasy World</title>
+        <title>2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成 - VRChat Fantasy World</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,23 +49,23 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
   <!-- iOS Safari: ホーム画面追加時のアイコン -->
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 
   <!-- ファビコン(複数サイズ) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../assets/favicon-96.png">
 
   <!-- Android Chrome / PWA アイコン -->
-  <link rel="icon" type="image/png" sizes="192x192" href="../assets/icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="../assets/icon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../assets/icon-512.png">
 
   <!-- iOS ホーム画面表示時の見え方 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -98,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#2026-04-29-triplanar" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -112,9 +108,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="VRChat Fantasy World" class="md-header__button md-logo" aria-label="VRChat Fantasy World" data-md-component="logo">
+    <a href="../.." title="VRChat Fantasy World" class="md-header__button md-logo" aria-label="VRChat Fantasy World" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -131,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              制作日誌
+              2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成
             
           </span>
         </div>
@@ -232,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -253,7 +249,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../worldbuilding/" class="md-tabs__link">
+        <a href="../../worldbuilding/" class="md-tabs__link">
           
   
   
@@ -275,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../visual-design/" class="md-tabs__link">
+        <a href="../../visual-design/" class="md-tabs__link">
           
   
   
@@ -297,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../world-spec/" class="md-tabs__link">
+        <a href="../../world-spec/" class="md-tabs__link">
           
   
   
@@ -315,13 +311,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -343,7 +337,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -379,9 +373,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="VRChat Fantasy World" class="md-nav__button md-logo" aria-label="VRChat Fantasy World" data-md-component="logo">
+    <a href="../.." title="VRChat Fantasy World" class="md-nav__button md-logo" aria-label="VRChat Fantasy World" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     VRChat Fantasy World
@@ -396,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -458,7 +452,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../worldbuilding/" class="md-nav__link ">
+            <a href="../../worldbuilding/" class="md-nav__link ">
               
   
   
@@ -502,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worldbuilding/geography/" class="md-nav__link">
+      <a href="../../worldbuilding/geography/" class="md-nav__link">
         
   
   
@@ -530,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worldbuilding/history/" class="md-nav__link">
+      <a href="../../worldbuilding/history/" class="md-nav__link">
         
   
   
@@ -558,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worldbuilding/cultures/" class="md-nav__link">
+      <a href="../../worldbuilding/cultures/" class="md-nav__link">
         
   
   
@@ -586,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worldbuilding/excerpts/world-summary-for-vr/" class="md-nav__link">
+      <a href="../../worldbuilding/excerpts/world-summary-for-vr/" class="md-nav__link">
         
   
   
@@ -614,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worldbuilding/excerpts/water-system/" class="md-nav__link">
+      <a href="../../worldbuilding/excerpts/water-system/" class="md-nav__link">
         
   
   
@@ -680,7 +674,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../visual-design/" class="md-nav__link ">
+            <a href="../../visual-design/" class="md-nav__link ">
               
   
   
@@ -724,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../visual-design/moodboard/" class="md-nav__link">
+      <a href="../../visual-design/moodboard/" class="md-nav__link">
         
   
   
@@ -752,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../visual-design/architecture/" class="md-nav__link">
+      <a href="../../visual-design/architecture/" class="md-nav__link">
         
   
   
@@ -780,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../visual-design/nature/" class="md-nav__link">
+      <a href="../../visual-design/nature/" class="md-nav__link">
         
   
   
@@ -846,7 +840,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../world-spec/" class="md-nav__link ">
+            <a href="../../world-spec/" class="md-nav__link ">
               
   
   
@@ -890,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../world-spec/scope/" class="md-nav__link">
+      <a href="../../world-spec/scope/" class="md-nav__link">
         
   
   
@@ -918,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../world-spec/frontier-village/" class="md-nav__link">
+      <a href="../../world-spec/frontier-village/" class="md-nav__link">
         
   
   
@@ -946,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../world-spec/interactions/" class="md-nav__link">
+      <a href="../../world-spec/interactions/" class="md-nav__link">
         
   
   
@@ -978,8 +972,6 @@
       
   
   
-    
-  
   
   
     
@@ -993,23 +985,22 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1028,7 +1019,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1090,7 +1081,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -1134,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/project-setup/" class="md-nav__link">
+      <a href="../../reference/project-setup/" class="md-nav__link">
         
   
   
@@ -1162,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/vrchat-setup/" class="md-nav__link">
+      <a href="../../reference/vrchat-setup/" class="md-nav__link">
         
   
   
@@ -1190,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/glossary/" class="md-nav__link">
+      <a href="../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -1218,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/tech-notes/" class="md-nav__link">
+      <a href="../../reference/tech-notes/" class="md-nav__link">
         
   
   
@@ -1246,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/assets/" class="md-nav__link">
+      <a href="../../reference/assets/" class="md-nav__link">
         
   
   
@@ -1301,10 +1292,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        やったこと
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="やったこと">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiled-importer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiled に「門」を追加 → Importer も更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain-terraincarvercs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terrain に水路を「掘る」(TerrainCarver.cs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stylized-water-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        水面: Stylized Water v1 を導入 → 何度か調整
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-realistic-textures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free Realistic Textures 導入 → 壁/家/畑/門にマテリアル適用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cube-uv-poiyomi-world-pos-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cube の UV 引き伸ばし問題 → Poiyomi の World Pos UV を試す
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mochies-standard-shader-triplanar-world-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解決: Mochie's Standard Shader (Triplanar World mode) に切り替え
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        エントリ
+        詰まりどころ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v01-v02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現在の状態(v0.1 → v0.2 移行中)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        明日以降の TODO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        決定事項
       
     </span>
   </a>
@@ -1328,15 +1435,125 @@
 
 
 
-<h1 id="_1">制作日誌<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>日々の試行錯誤、決定、行き詰まりを記録する場所。
-ファイル名は <code>YYYY-MM-DD-見出し.md</code> 形式。新しい順に並べる。</p>
-<h2 id="_2">エントリ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="2026-04-29-triplanar">2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成<a class="headerlink" href="#2026-04-29-triplanar" title="Permanent link">&para;</a></h1>
+<h2 id="_1">やったこと<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="tiled-importer">Tiled に「門」を追加 → Importer も更新<a class="headerlink" href="#tiled-importer" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="2026-04-29-water-and-triplanar-materials/">2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成</a></li>
-<li><a href="2026-04-28-tiled-and-unity-blockout/">2026-04-28: Tiled 採用 + 辺境の村レイアウト + Unity 自動ブロックアウト</a></li>
-<li><a href="2026-04-27-first-upload/">2026-04-27: GitHub Pages 公開 + 初回ワールドアップロード</a></li>
-<li><a href="2026-04-26-kickoff/">2026-04-26: プロジェクト立ち上げ</a></li>
+<li>Tiled マップに <code>gates_paths</code> レイヤーを新設し、村の入口に門オブジェクトを2基配置</li>
+<li>Importer 側で <strong>門を「lintel(まぐさ)」形式</strong>にレンダリング:<ul>
+<li>通常の Cube ではなく、上部 0.6m 厚の梁だけを生成</li>
+<li>下部に最低 2.0m の通行高を確保</li>
+<li>これでアバターが門の下を通り抜けられる</li>
+</ul>
+</li>
+<li>既存の <code>frontier-village.tmj</code> を誤って上書きするインシデントが発生 → <code>frontier-village.tmj.before-gates.backup</code> から復元してリプレイ</li>
+<li>LayerMaterialPaths に <code>gates_paths</code> 用エントリを追加</li>
+</ul>
+<h3 id="terrain-terraincarvercs">Terrain に水路を「掘る」(TerrainCarver.cs)<a class="headerlink" href="#terrain-terraincarvercs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>新規 Editor スクリプト: <code>Assets/Editor/TerrainCarver.cs</code></li>
+<li>メニュー: <code>VRChat Village → Carve Water Channels</code></li>
+<li><code>frontier-village.tmj</code> の <code>water</code> レイヤーを読んで、各水路矩形に対応する Terrain 範囲を <strong>0.5m 掘り込む</strong></li>
+<li>ハイトマップを直接書き換える方式で、Y軸反転(Tiled→Unity)も Importer と同じ式を共有</li>
+<li>これで水面 Plane が Terrain にめり込まず、水路らしい谷ができる</li>
+<li>カービング幅は実際の水路幅 +1m(両側 0.5m ずつバッファ)で、Plane 側の水面と隙間が出ない</li>
+</ul>
+<h3 id="stylized-water-v1">水面: Stylized Water v1 を導入 → 何度か調整<a class="headerlink" href="#stylized-water-v1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stylized Water v2 は Built-in RP 非対応だったので <strong>v1 に切り替え</strong></li>
+<li><code>Assets/StylizedWater/Materials/StylizedWater_Desktop.mat</code> を採用</li>
+<li>VillageImporter で water レイヤーは Cube ではなく <strong>Plane</strong> を生成、Collider は除去</li>
+<li>黄昏ワールド向けに以下を調整:<ul>
+<li><strong>Reflection Strength</strong>: 0(空の白さが水面に強く出すぎていた)</li>
+<li><strong>Glossiness</strong>: 既定より下げて鏡面感を抑制</li>
+<li><strong>Foam Alpha</strong>: 下げて泡の主張を弱く</li>
+<li><strong>Rim Size</strong>: 4.6 → <strong>0.3</strong> ← これが「白っぽい部分が広すぎる」主因だった</li>
+</ul>
+</li>
+<li>横から覗くと水面の裏が見える問題 → Plane を矩形より +1.0m ずつ広げて Terrain の傾斜にめり込ませる形で解消(<code>widenM = 1.0</code>)</li>
+</ul>
+<h3 id="free-realistic-textures">Free Realistic Textures 導入 → 壁/家/畑/門にマテリアル適用<a class="headerlink" href="#free-realistic-textures" title="Permanent link">&para;</a></h3>
+<ul>
+<li>アセット <code>Game Buffs / Free Realistic Textures</code> を Assets に追加</li>
+<li>採用テクスチャ:<ul>
+<li>壁: <code>Cracked_Soil_16</code>(乾いた土壁)</li>
+<li>家: 同上(後で差し替え可)</li>
+<li>畑: <code>Forest_Ground_12</code></li>
+<li>門: <code>Wood_Planks_40</code></li>
+</ul>
+</li>
+<li>VillageImporter の <code>LayerMaterialPaths</code> に Standard マテリアルへのフォールバックパスを集約</li>
+</ul>
+<h3 id="cube-uv-poiyomi-world-pos-uv">Cube の UV 引き伸ばし問題 → Poiyomi の World Pos UV を試す<a class="headerlink" href="#cube-uv-poiyomi-world-pos-uv" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cube 6面に同じ UV(0-1)が割り当てられているため、79m × 2m の壁では長辺方向にテクスチャが激しく引き伸ばされる</li>
+<li>当初対策として Cube の Tiling を「面の縦横比に合わせて自動調整」する案を実装したが、Cube の全面で同じ Tiling になる制約から完全には解決せず</li>
+<li>Poiyomi Toon World シェーダーの <strong>World Pos UV モード</strong>(値 5)に切り替え<ul>
+<li>→ ところが World Pos は <strong>XZ 平面投影だけ</strong>で、垂直壁では Y 方向に UV が変化しない</li>
+<li>→ 縦縞の悪化版になった</li>
+</ul>
+</li>
+<li>Poiyomi Toon World の UV モード一覧に <strong>Triplanar が無い</strong>ことを Inspector で確認<ul>
+<li>選択肢: UV0〜UV3, Panosphere, World Pos, Local Pos, Polar UV, Distorted UV, Matcap</li>
+</ul>
+</li>
+</ul>
+<h3 id="mochies-standard-shader-triplanar-world-mode">解決: Mochie's Standard Shader (Triplanar World mode) に切り替え<a class="headerlink" href="#mochies-standard-shader-triplanar-world-mode" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mochie's Shader を導入(<code>Assets/Mochie/</code>)</li>
+<li><code>Mochie/Standard</code> シェーダーには <strong>本物の Triplanar 機能</strong> がある:<ul>
+<li><code>_PrimarySampleMode = 3</code> (Triplanar)</li>
+<li><code>_TriplanarCoordSpace = 1</code> (World)</li>
+<li>法線マップも triplanar 対応(bgolus 方式の正しい実装)</li>
+</ul>
+</li>
+<li><code>Assets/Editor/MaterialGenerator.cs</code> を Mochie/Standard 用に全面書き換え<ul>
+<li>メニュー: <code>VRChat Village → Generate Materials</code></li>
+<li>既存 .mat があればシェーダー差し替えのみ(シーン内参照を維持)</li>
+<li>新規ならアセット作成</li>
+<li><code>_TRIPLANAR_ON</code> キーワードを明示有効化</li>
+</ul>
+</li>
+<li>結果: <strong>Cube のどの面でも均等にテクスチャが貼られる</strong> ようになった ✓</li>
+<li>TileSize を実機を見ながら調整:<ul>
+<li>壁/家: 2.0m → <strong>0.8m</strong> per repeat</li>
+<li>畑: 3.0m → <strong>1.2m</strong></li>
+<li>門(木目): 2.0m → <strong>0.6m</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="_2">詰まりどころ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tiled ファイルを誤って前のフォルダに保存して上書き</strong> → <code>.backup</code> から復元</li>
+<li><strong>Edit ツールで日本語ファイルが途中で切れる</strong> 現象を再確認 → Write/heredoc に切り替え</li>
+<li><strong>Stylized Water v2 が SRP 専用で動かない</strong> → v1 に戻す</li>
+<li><strong>Poiyomi Toon World の UV モードに Triplanar が無い</strong>(Pro 版にはある)</li>
+<li>水面が白っぽすぎた原因が <strong>Rim Size</strong> だと特定できるまで、Reflection / Glossiness / Foam を順番に潰した</li>
+</ul>
+<h2 id="v01-v02">現在の状態(v0.1 → v0.2 移行中)<a class="headerlink" href="#v01-v02" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✅ Tiled → Unity ブロックアウト(壁・家・畑・水路・門)</li>
+<li>✅ Terrain (200×200m) と Stylized Trees</li>
+<li>✅ 水路を Terrain に掘り込み済み</li>
+<li>✅ 水面 Plane に Stylized Water v1(黄昏向け調整済)</li>
+<li>✅ 壁・家・畑・門に Mochie/Standard Triplanar マテリアル適用</li>
+<li>✅ 門は通り抜け可能(lintel 形式)</li>
+</ul>
+<h2 id="todo">明日以降の TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> AllSky Free から黄昏系 Skybox を選定して適用</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Terrain に草・土・砂利のレイヤー塗り分け</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tiled に 術式石①② / スポーン地点 / 見張り台 を追加</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> スポーン位置を村の門付近に</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build &amp; Test で歩いて容量再確認</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> (好みで)Mochie の Stochastic モードでタイル感を曖昧化</li>
+</ul>
+<h2 id="_3">決定事項<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>マテリアルは Mochie/Standard (Triplanar World) を標準とする</strong>(Poiyomi は別用途で残す)</li>
+<li><strong>Tiled の <code>gates_paths</code> レイヤーは「上部 lintel」として描画する</strong>(通り抜け可)</li>
+<li><strong>Terrain Carver は Importer と同じ Y 反転式を使う</strong>(座標規約を 1 箇所に集約する未来課題あり)</li>
+<li><strong>Stylized Water は v1 を採用</strong>(v2 は Built-in RP 非対応のため不採用)</li>
 </ul>
 
 
@@ -1393,10 +1610,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
