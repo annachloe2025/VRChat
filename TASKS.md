@@ -7,10 +7,11 @@ VRChat Fantasy World プロジェクトのタスク管理。
 
 - [ ] AllSky Free から黄昏系 Skybox を 1-2 個に絞って Import、シーンに適用
 - [ ] Terrain に草・土・砂利の塗り分け(中央広場・道・川岸)
-- [ ] Tiled に 門 / 術式石①② / スポーン地点 / 見張り台 を追加配置 → 再Import
+- [ ] Tiled に 術式石①② / スポーン地点 / 見張り台 を追加配置 → 再Import
 - [ ] スポーン位置を村の門付近に調整
 - [ ] 仮アセット(Stylized Trees の家代わりや、別の建物アセット)で家プレハブを試す
 - [ ] Build & Test で歩いてみる、容量再確認
+- [ ] マテリアルの TileSize を実機で見ながら微調整(タイル感が強ければ Mochie の Stochastic モードも検討)
 
 ## Next (次にやる) — 辺境の村 v0.2 環境構築
 
@@ -60,3 +61,13 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [x] Stylized Trees アセット導入、Paint Trees の操作習熟 (2026-04-28)
 - [x] ビルドサイズ確認 (Terrain あり 100MB / なし 70MB、現状 PC OK) (2026-04-28)
 - [x] Skybox の選定方針確定(AllSky Free から黄昏系を選別) (2026-04-28)
+- [x] Tiled に gates_paths レイヤーを追加、村の入口に門を2基配置 (2026-04-29)
+- [x] Importer 側で門を「上部 lintel(まぐさ)だけ生成」して通り抜け可に (2026-04-29)
+- [x] TerrainCarver.cs を実装、water レイヤーから Terrain を 0.5m 掘る運用稼働 (2026-04-29)
+- [x] Stylized Water v1 を導入、黄昏向けに Rim Size / Reflection / Foam を調整 (2026-04-29)
+- [x] water レイヤーの GameObject を Cube → Plane に変更、widenM=1.0 で隙間対策 (2026-04-29)
+- [x] Free Realistic Textures を導入、壁/家/畑/門のテクスチャを選定 (2026-04-29)
+- [x] LayerMaterialPaths で全レイヤーのマテリアル割当を VillageImporter 側に集約 (2026-04-29)
+- [x] Mochie's Shader を導入、Mochie/Standard を辺境の村の標準シェーダーに採用 (2026-04-29)
+- [x] MaterialGenerator.cs を実装、Mochie/Standard Triplanar (World) マテリアルを自動生成 (2026-04-29)
+- [x] Cube UV 引き伸ばし問題を Triplanar で解消、TileSize 既定値を確定 (2026-04-29)

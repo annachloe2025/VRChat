@@ -7,7 +7,7 @@
 自作ファンタジー小説の世界観をビジュアル化することを目的に、VRChatワールドとして再構築するプロジェクト。
 小説の設定資料を docs に整理しつつ、Tiled でレイアウト設計、Unity で実装、mkdocs で可視化と進捗管理を一体運用する。
 
-**現在のフェーズ:** 辺境の村 v0.1 ブロックアウト中。Tiled でレイアウト → Unity 自動配置のパイプライン稼働中(2026-04-28 時点)
+**現在のフェーズ:** 辺境の村 v0.1 → v0.2 移行中。Tiled→Unity ブロックアウトに加え、Terrain 水路カービング・水面シェーダー(Stylized Water v1)・壁/家/畑/門 への Triplanar マテリアル適用まで完了(2026-04-29 時点)
 **主担当:** hoehoe
 **性格:** 個人実験プロジェクト、無理をしない、楽しさ優先
 
@@ -28,18 +28,27 @@
 
 ```
 [Tiled でレイアウト編集 (.tmj)]
-   ↓ Unity Editor のメニュー: VRChat Village → Import from Tiled
-[VillageImporter.cs が JSON を読んで Cube を自動配置]
+   ↓ メニュー: VRChat Village → Import from Tiled
+[VillageImporter.cs が JSON を読んで Cube/Plane を自動配置]
+   ↓ メニュー: VRChat Village → Carve Water Channels
+[TerrainCarver.cs が water レイヤーから Terrain を 0.5m 掘る]
+   ↓ メニュー: VRChat Village → Generate Materials
+[MaterialGenerator.cs が Mochie/Standard Triplanar マテリアルを生成]
    ↓
-[Unity シーンに Village GameObject ツリーが生成]
+[Unity シーンに Village GameObject ツリー + 水路の窪み + テクスチャ済 Cube が完成]
 ```
 
 - Tiled ファイル位置: `unity/VRC-FantasyWorld-Unity/Assets/Maps/frontier-village.tmj`
 - 1タイル = 1m = 32px
 - Tiled Y(下向き) → Unity Z(奥向き)に **反転** して変換
 - インポータ: `unity/VRC-FantasyWorld-Unity/Assets/Editor/VillageImporter.cs`
-- レイヤー(walls/water/houses/crop_fields)ごとに色付きマテリアル割り当て
+- Terrain カーバー: `unity/VRC-FantasyWorld-Unity/Assets/Editor/TerrainCarver.cs`
+- マテリアル生成: `unity/VRC-FantasyWorld-Unity/Assets/Editor/MaterialGenerator.cs`
+- レイヤー(walls/water/houses/crop_fields/gates_paths)ごとに `LayerMaterialPaths` でマテリアル割り当て
 - 高さは custom property `height_m` から取得、無ければレイヤーごとのデフォルト
+- `gates_paths` の門は **上部 lintel(まぐさ)だけ生成** して下を通り抜けられるよう調整
+- water レイヤーは Cube ではなく **Plane**(Stylized Water v1)を生成、Collider は除去
+- `frontier-village.tmj.before-gates.backup` を Tiled の安全網として保持
 
 ## Novel プロジェクトとの関係
 
@@ -81,6 +90,16 @@
 - **mkdocs + Material for MkDocs** (世界観・進捗の可視化、GitHub Pages で公開済み)
 - **Git + GitHub** (docs と設定のみ追跡、Unity/Blender 関連は完全 ignore、LFS不使用)
 - **cairosvg** (アイコン・配置図のSVG→PNG変換、ローカル開発時のみ)
+
+### Unity 内アセット / シェーダー
+
+- **Stylized Trees** — 樹木 Paint Trees 用
+- **AllSky Free** — Skybox 候補ライブラリ(黄昏系を選定中)
+- **Stylized Water v1** — 水面シェーダー(v2 は Built-in RP 非対応のため不採用)
+- **Free Realistic Textures** (Game Buffs) — 壁/家/畑/門のテクスチャ素材
+    - 採用: `Cracked_Soil_16`(壁・家)、`Forest_Ground_12`(畑)、`Wood_Planks_40`(門)
+- **Mochie's Shaders** — `Mochie/Standard` を採用。`_PrimarySampleMode = 3` (Triplanar) + `_TriplanarCoordSpace = 1` (World) で Cube どの面でも均等に貼れる。**標準シェーダー**として運用
+- **Poiyomi Toon World** — インストール済だが、UV モードに Triplanar が無いため辺境の村では未採用。アバター・装飾用に温存
 
 ## リポジトリ運用方針
 
@@ -162,6 +181,12 @@
 | 2026-04-28 | Tiled ファイルは `unity/VRC-FantasyWorld-Unity/Assets/Maps/frontier-village.tmj` に配置(git管理外) |
 | 2026-04-28 | C# インポータ `VillageImporter.cs` を実装、Tiled → Unity の自動ブロックアウトが稼働 |
 | 2026-04-28 | 座標変換: 1タイル=1m=32px、Tiled Y下 → Unity Z奥(反転)で確定 |
+| 2026-04-29 | Tiled に `gates_paths` レイヤー追加、門は **上部 lintel(まぐさ)だけ生成** して通り抜け可に |
+| 2026-04-29 | `TerrainCarver.cs` で water レイヤーを Terrain に **0.5m 掘り込む**運用を確立 |
+| 2026-04-29 | 水面シェーダーは **Stylized Water v1** を採用(v2 は Built-in RP 非対応)。Rim Size を 4.6→0.3 等で黄昏向けに調整 |
+| 2026-04-29 | 壁/家/畑/門のマテリアルは **Mochie/Standard の Triplanar (World)** で運用。`MaterialGenerator.cs` で自動生成 |
+| 2026-04-29 | Cube UV 引き伸ばし問題は Triplanar で解決。Poiyomi Toon World は Triplanar 非対応のため辺境の村では未採用 |
+| 2026-04-29 | TileSize 既定: 壁/家=0.8m, 畑=1.2m, 門=0.6m per repeat |
 
 ## 未確定事項
 

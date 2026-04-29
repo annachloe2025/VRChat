@@ -5,6 +5,7 @@
 
 ## エントリ
 
+- [2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成](2026-04-29-water-and-triplanar-materials.md)
 - [2026-04-28: Tiled 採用 + 辺境の村レイアウト + Unity 自動ブロックアウト](2026-04-28-tiled-and-unity-blockout.md)
 - [2026-04-27: GitHub Pages 公開 + 初回ワールドアップロード](2026-04-27-first-upload.md)
 - [2026-04-26: プロジェクト立ち上げ](2026-04-26-kickoff.md)
