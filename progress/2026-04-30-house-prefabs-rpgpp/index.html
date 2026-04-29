@@ -23,7 +23,7 @@
     
     
       
-        <title>2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成 - VRChat Fantasy World</title>
+        <title>2026-04-30: 家プレハブ化(RPGPP_LT 導入 + VillageImporter プレハブ対応) - VRChat Fantasy World</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2026-04-29-triplanar" class="md-skip">
+        <a href="#2026-04-30-rpgpp_lt-villageimporter" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成
+              2026-04-30: 家プレハブ化(RPGPP_LT 導入 + VillageImporter プレハブ対応)
             
           </span>
         </div>
@@ -1304,10 +1304,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tiled-importer" class="md-nav__link">
+  <a href="#rpgpp_lt-rpg-poly-pack-lite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tiled に「門」を追加 → Importer も更新
+        RPGPP_LT (RPG Poly Pack - Lite) を導入
       
     </span>
   </a>
@@ -1315,10 +1315,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terrain-terraincarvercs" class="md-nav__link">
+  <a href="#villageimporter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terrain に水路を「掘る」(TerrainCarver.cs)
+        VillageImporter にプレハブ対応を追加
       
     </span>
   </a>
@@ -1326,10 +1326,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#stylized-water-v1" class="md-nav__link">
+  <a href="#auto_lift_houses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        水面: Stylized Water v1 を導入 → 何度か調整
+        地面埋まりの自動補正(AUTO_LIFT_HOUSES)
       
     </span>
   </a>
@@ -1337,43 +1337,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#free-realistic-textures" class="md-nav__link">
+  <a href="#yrotation_y" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Free Realistic Textures 導入 → 壁/家/畑/門にマテリアル適用
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cube-uv-poiyomi-world-pos-uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cube の UV 引き伸ばし問題 → Poiyomi の World Pos UV を試す
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mochies-standard-shader-triplanar-world-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        解決: Mochie's Standard Shader (Triplanar World mode) に切り替え
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detail" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        テクスチャ差し替えと Detail レイヤー追加
+        Y回転(rotation_y)サポートを追加(機能のみ、運用は保留)
       
     </span>
   </a>
@@ -1384,7 +1351,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        詰まりどころ
+        詰まりどころ・保留事項
       
     </span>
   </a>
@@ -1397,10 +1364,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#v01-v02" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        現在の状態(v0.1 → v0.2 移行中)
+        現在の状態
       
     </span>
   </a>
@@ -1419,7 +1386,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         決定事項
@@ -1446,144 +1413,87 @@
 
 
 
-<h1 id="2026-04-29-triplanar">2026-04-29: 水路カービング + 水面シェーダー + Triplanar マテリアル自動生成<a class="headerlink" href="#2026-04-29-triplanar" title="Permanent link">&para;</a></h1>
+<h1 id="2026-04-30-rpgpp_lt-villageimporter">2026-04-30: 家プレハブ化(RPGPP_LT 導入 + VillageImporter プレハブ対応)<a class="headerlink" href="#2026-04-30-rpgpp_lt-villageimporter" title="Permanent link">&para;</a></h1>
 <h2 id="_1">やったこと<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="tiled-importer">Tiled に「門」を追加 → Importer も更新<a class="headerlink" href="#tiled-importer" title="Permanent link">&para;</a></h3>
+<h3 id="rpgpp_lt-rpg-poly-pack-lite">RPGPP_LT (RPG Poly Pack - Lite) を導入<a class="headerlink" href="#rpgpp_lt-rpg-poly-pack-lite" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Tiled マップに <code>gates_paths</code> レイヤーを新設し、村の入口に門オブジェクトを2基配置</li>
-<li>Importer 側で <strong>門を「lintel(まぐさ)」形式</strong>にレンダリング:<ul>
-<li>通常の Cube ではなく、上部 0.6m 厚の梁だけを生成</li>
-<li>下部に最低 2.0m の通行高を確保</li>
-<li>これでアバターが門の下を通り抜けられる</li>
+<li>Asset Store の <strong>RPGPP_LT</strong> を Unity プロジェクトに Import</li>
+<li>配置先: <code>Assets/RPGPP_LT/</code></li>
+<li>内容を確認、家として使えるプレハブを特定:<ul>
+<li><code>Prefabs/Buildings/Bld_closed/rpgpp_lt_building_01〜05.prefab</code>(5 種類の住居)</li>
+<li><code>Prefabs/Exterior/Wood_path/rpgpp_lt_shed_wood_01〜02.prefab</code>(小屋系)</li>
+<li>その他: 樽・桶・テーブル・木製柵・木製通路・植物・岩・雲・雪 など多数</li>
 </ul>
 </li>
-<li>既存の <code>frontier-village.tmj</code> を誤って上書きするインシデントが発生 → <code>frontier-village.tmj.before-gates.backup</code> から復元してリプレイ</li>
-<li>LayerMaterialPaths に <code>gates_paths</code> 用エントリを追加</li>
+<li>プレハブ構造は <strong>GameObject + MeshFilter + MeshRenderer のみ</strong>(超シンプル、1mesh/1material)</li>
+<li>全建物・小道具が <strong>テクスチャアトラス <code>rpgpp_lt_tex_a.tga</code> を共有</strong> → ドローコール削減で VRChat 親和性◎</li>
 </ul>
-<h3 id="terrain-terraincarvercs">Terrain に水路を「掘る」(TerrainCarver.cs)<a class="headerlink" href="#terrain-terraincarvercs" title="Permanent link">&para;</a></h3>
+<h3 id="villageimporter">VillageImporter にプレハブ対応を追加<a class="headerlink" href="#villageimporter" title="Permanent link">&para;</a></h3>
 <ul>
-<li>新規 Editor スクリプト: <code>Assets/Editor/TerrainCarver.cs</code></li>
-<li>メニュー: <code>VRChat Village → Carve Water Channels</code></li>
-<li><code>frontier-village.tmj</code> の <code>water</code> レイヤーを読んで、各水路矩形に対応する Terrain 範囲を <strong>0.5m 掘り込む</strong></li>
-<li>ハイトマップを直接書き換える方式で、Y軸反転(Tiled→Unity)も Importer と同じ式を共有</li>
-<li>これで水面 Plane が Terrain にめり込まず、水路らしい谷ができる</li>
-<li>カービング幅は実際の水路幅 +1m(両側 0.5m ずつバッファ)で、Plane 側の水面と隙間が出ない</li>
+<li><code>Assets/Editor/VillageImporter.cs</code> を拡張</li>
+<li>houses レイヤーは Cube ではなく <strong>RPGPP_LT のプレハブを順番に Instantiate</strong> する仕組みを実装</li>
+<li>仕組み:<ul>
+<li><code>HousePrefabPaths</code> 配列に 4 つのプレハブパスを定義(building_01〜04)</li>
+<li>houses レイヤーの Tiled オブジェクトを処理する順に、配列を循環して割り当て<ul>
+<li>家1 → building_01</li>
+<li>家2 → building_02</li>
+<li>家3 → building_03</li>
+<li>家4 → building_04</li>
 </ul>
-<h3 id="stylized-water-v1">水面: Stylized Water v1 を導入 → 何度か調整<a class="headerlink" href="#stylized-water-v1" title="Permanent link">&para;</a></h3>
+</li>
+<li><code>s_houseIndex</code> で何軒目か追跡(<code>ImportVillage</code> 開始時にリセット)</li>
+<li>プレハブが見つからない場合は従来の Cube にフォールバック</li>
+</ul>
+</li>
+<li>比較・退避用に <code>const bool USE_HOUSE_PREFABS = true</code> で ON/OFF 切替可能</li>
+</ul>
+<h3 id="auto_lift_houses">地面埋まりの自動補正(AUTO_LIFT_HOUSES)<a class="headerlink" href="#auto_lift_houses" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Stylized Water v2 は Built-in RP 非対応だったので <strong>v1 に切り替え</strong></li>
-<li><code>Assets/StylizedWater/Materials/StylizedWater_Desktop.mat</code> を採用</li>
-<li>VillageImporter で water レイヤーは Cube ではなく <strong>Plane</strong> を生成、Collider は除去</li>
-<li>黄昏ワールド向けに以下を調整:<ul>
-<li><strong>Reflection Strength</strong>: 0(空の白さが水面に強く出すぎていた)</li>
-<li><strong>Glossiness</strong>: 既定より下げて鏡面感を抑制</li>
-<li><strong>Foam Alpha</strong>: 下げて泡の主張を弱く</li>
-<li><strong>Rim Size</strong>: 4.6 → <strong>0.3</strong> ← これが「白っぽい部分が広すぎる」主因だった</li>
+<li>課題: プレハブの pivot や mesh の都合で、Y=0 で配置すると床面が地面より下にめり込むことがある</li>
+<li>解決:<ul>
+<li>配置直後に <strong>全 Renderer の bounds.min.y</strong> を計算</li>
+<li>0 未満なら、そのぶん Y 方向に持ち上げて床が Y=0 に揃うよう補正</li>
+<li>補正量を Console にログ出力(<code>lift=+0.XXm</code>)</li>
 </ul>
 </li>
-<li>横から覗くと水面の裏が見える問題 → Plane を矩形より +1.0m ずつ広げて Terrain の傾斜にめり込ませる形で解消(<code>widenM = 1.0</code>)</li>
+<li><code>const bool AUTO_LIFT_HOUSES = true</code> で ON/OFF 切替可能</li>
 </ul>
-<h3 id="free-realistic-textures">Free Realistic Textures 導入 → 壁/家/畑/門にマテリアル適用<a class="headerlink" href="#free-realistic-textures" title="Permanent link">&para;</a></h3>
+<h3 id="yrotation_y">Y回転(rotation_y)サポートを追加(機能のみ、運用は保留)<a class="headerlink" href="#yrotation_y" title="Permanent link">&para;</a></h3>
 <ul>
-<li>アセット <code>Game Buffs / Free Realistic Textures</code> を Assets に追加</li>
-<li>採用テクスチャ:<ul>
-<li>壁: <code>Cracked_Soil_16</code>(乾いた土壁)</li>
-<li>家: 同上(後で差し替え可)</li>
-<li>畑: <code>Forest_Ground_12</code></li>
-<li>門: <code>Wood_Planks_40</code></li>
+<li>Tiled の各 house オブジェクトに <code>rotation_y</code>(float, 度)カスタムプロパティを設定すれば、その角度で Unity の Y 軸回転が適用される</li>
+<li><strong>矩形の中心 pivot で回転</strong>するので、位置がズレない(Tiled 標準の rotation は左上 pivot のためズレる)</li>
+<li>フォールバックとして Tiled 標準の <code>obj.rotation</code> も読むようにした(rotation_y 優先)</li>
+<li>単位: 度、Unity Y 軸回転(上から見て CW = 正)</li>
+<li>値の例: <code>0</code>(初期向き), <code>90</code>(時計回り90°), <code>180</code>(反対向き), <code>270</code>(反時計回り90°)</li>
 </ul>
-</li>
-<li>VillageImporter の <code>LayerMaterialPaths</code> に Standard マテリアルへのフォールバックパスを集約</li>
-</ul>
-<h3 id="cube-uv-poiyomi-world-pos-uv">Cube の UV 引き伸ばし問題 → Poiyomi の World Pos UV を試す<a class="headerlink" href="#cube-uv-poiyomi-world-pos-uv" title="Permanent link">&para;</a></h3>
+<h3 id="_2">詰まりどころ・保留事項<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Cube 6面に同じ UV(0-1)が割り当てられているため、79m × 2m の壁では長辺方向にテクスチャが激しく引き伸ばされる</li>
-<li>当初対策として Cube の Tiling を「面の縦横比に合わせて自動調整」する案を実装したが、Cube の全面で同じ Tiling になる制約から完全には解決せず</li>
-<li>Poiyomi Toon World シェーダーの <strong>World Pos UV モード</strong>(値 5)に切り替え<ul>
-<li>→ ところが World Pos は <strong>XZ 平面投影だけ</strong>で、垂直壁では Y 方向に UV が変化しない</li>
-<li>→ 縦縞の悪化版になった</li>
+<li><strong>家のプレハブの「正面」がどっちか</strong> はプレハブごとに違うので、実機で見ながら 4 軒それぞれ向きを決める必要がある</li>
+<li><strong>Tiled 上で向きを設定するワークフロー</strong>(Custom Properties の運用、表記法、テンプレート化)を <strong>どう運用するか方針未決</strong> → 一旦保留</li>
 </ul>
-</li>
-<li>Poiyomi Toon World の UV モード一覧に <strong>Triplanar が無い</strong>ことを Inspector で確認<ul>
-<li>選択肢: UV0〜UV3, Panosphere, World Pos, Local Pos, Polar UV, Distorted UV, Matcap</li>
-</ul>
-</li>
-</ul>
-<h3 id="mochies-standard-shader-triplanar-world-mode">解決: Mochie's Standard Shader (Triplanar World mode) に切り替え<a class="headerlink" href="#mochies-standard-shader-triplanar-world-mode" title="Permanent link">&para;</a></h3>
+<h2 id="_3">現在の状態<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Mochie's Shader を導入(<code>Assets/Mochie/</code>)</li>
-<li><code>Mochie/Standard</code> シェーダーには <strong>本物の Triplanar 機能</strong> がある:<ul>
-<li><code>_PrimarySampleMode = 3</code> (Triplanar)</li>
-<li><code>_TriplanarCoordSpace = 1</code> (World)</li>
-<li>法線マップも triplanar 対応(bgolus 方式の正しい実装)</li>
-</ul>
-</li>
-<li><code>Assets/Editor/MaterialGenerator.cs</code> を Mochie/Standard 用に全面書き換え<ul>
-<li>メニュー: <code>VRChat Village → Generate Materials</code></li>
-<li>既存 .mat があればシェーダー差し替えのみ(シーン内参照を維持)</li>
-<li>新規ならアセット作成</li>
-<li><code>_TRIPLANAR_ON</code> キーワードを明示有効化</li>
-</ul>
-</li>
-<li>結果: <strong>Cube のどの面でも均等にテクスチャが貼られる</strong> ようになった ✓</li>
-<li>TileSize を実機を見ながら調整:<ul>
-<li>壁/家: 2.0m → <strong>0.8m</strong> per repeat</li>
-<li>畑: 3.0m → <strong>1.2m</strong></li>
-<li>門(木目): 2.0m → <strong>0.6m</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="detail">テクスチャ差し替えと Detail レイヤー追加<a class="headerlink" href="#detail" title="Permanent link">&para;</a></h3>
-<ul>
-<li>壁を <code>Cracked_Soil_16</code> → <code>Asphalt_26</code> に変更(防壁としての重厚感)</li>
-<li>家を <code>Cracked_Soil_16</code> → <code>Concrete_3</code> に変更(漆喰風)</li>
-<li>「タイル感が目立つ、ランダム感が欲しい」という課題に対して試行:<ul>
-<li>試行1: Mochie の <strong>Stochastic Detail</strong> (UV0) を Lerp で重ねた → タイル境界は消えるがテクスチャ内容自体は同じで、近くで見たときの「壁ごとの違い」は出ない</li>
-<li>試行2(採用): Detail を <strong>Triplanar (World) で別テクスチャを大スケールで重ねる</strong>方式に変更</li>
-</ul>
-</li>
-<li>採用した Detail 構成:<ul>
-<li>壁 = Asphalt_26 + <strong>Cracked_Soil_16</strong> (5m, Mulx2, 0.35) → 経年汚れの斑模様</li>
-<li>家 = Concrete_3 + <strong>Cracked_Soil_16</strong> (5m, Overlay, 0.25) → 染みのコントラスト</li>
-<li>畑/門は Detail なし</li>
-</ul>
-</li>
-<li>Detail も Triplanar (World) なので、<strong>Cube のワールド座標が違えば Detail の当たる場所も違う</strong> → 壁の節ごとに本当に見た目が変わる</li>
-</ul>
-<h3 id="_2">詰まりどころ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Tiled ファイルを誤って前のフォルダに保存して上書き</strong> → <code>.backup</code> から復元</li>
-<li><strong>Edit ツールで日本語ファイルが途中で切れる</strong> 現象を再確認 → Write/heredoc に切り替え</li>
-<li><strong>Stylized Water v2 が SRP 専用で動かない</strong> → v1 に戻す</li>
-<li><strong>Poiyomi Toon World の UV モードに Triplanar が無い</strong>(Pro 版にはある)</li>
-<li>水面が白っぽすぎた原因が <strong>Rim Size</strong> だと特定できるまで、Reflection / Glossiness / Foam を順番に潰した</li>
-</ul>
-<h2 id="v01-v02">現在の状態(v0.1 → v0.2 移行中)<a class="headerlink" href="#v01-v02" title="Permanent link">&para;</a></h2>
-<ul>
-<li>✅ Tiled → Unity ブロックアウト(壁・家・畑・水路・門)</li>
-<li>✅ Terrain (200×200m) と Stylized Trees</li>
-<li>✅ 水路を Terrain に掘り込み済み</li>
-<li>✅ 水面 Plane に Stylized Water v1(黄昏向け調整済)</li>
-<li>✅ 壁・家・畑・門に Mochie/Standard Triplanar マテリアル適用</li>
-<li>✅ 門は通り抜け可能(lintel 形式)</li>
+<li>✅ houses レイヤーが Cube → RPGPP_LT 家プレハブ(building_01〜04)に置き換わった</li>
+<li>✅ サイズ感は 10×10m の Tiled 矩形に対していい感じ(たまたま合っていた)</li>
+<li>✅ 地面埋まりは自動 lift で解消</li>
+<li>⏸️ 家の向き調整は Tiled での運用方法を決めてから着手</li>
 </ul>
 <h2 id="todo">明日以降の TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Tiled で家の向きをどう指定するかの運用方針を決定</strong>(rotation_y vs Tiled 標準回転、どこに書くか、命名規則 等)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 家1〜4 の向きを実際に rotation_y で設定して再 Import</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> サイズ感が違和感あれば、特定の家だけ scale を入れる、または Tiled 矩形を変える</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 小屋(rpgpp_lt_shed_wood_*)を補助建物として使うか検討</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> AllSky Free から黄昏系 Skybox を選定して適用</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Terrain に草・土・砂利のレイヤー塗り分け</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tiled に 術式石①② / スポーン地点 / 見張り台 を追加</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> スポーン位置を村の門付近に</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build &amp; Test で歩いて容量再確認</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> (実機を見て)Detail Strength や TileSize を微調整</li>
 </ul>
-<h2 id="_3">決定事項<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">決定事項<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>マテリアルは Mochie/Standard (Triplanar World) を標準とする</strong>(Poiyomi は別用途で残す)</li>
-<li><strong>壁=Asphalt_26 / 家=Concrete_3 / 畑=Forest_Ground_12 / 門=Wood_Planks_40</strong> で確定</li>
-<li><strong>Detail は別テクスチャを Triplanar 大スケールで重ねる</strong>方式を採用(Stochastic は近距離での「場所ごとの差」が出ないため不採用)</li>
-<li><strong>Tiled の <code>gates_paths</code> レイヤーは「上部 lintel」として描画する</strong>(通り抜け可)</li>
-<li><strong>Terrain Carver は Importer と同じ Y 反転式を使う</strong>(座標規約を 1 箇所に集約する未来課題あり)</li>
-<li><strong>Stylized Water は v1 を採用</strong>(v2 は Built-in RP 非対応のため不採用)</li>
+<li><strong>家のメッシュは RPGPP_LT を採用</strong>(無料、軽量、テクスチャアトラス共有で VRChat 適性高)</li>
+<li><strong>houses はプレハブ化、壁/畑/門は Cube + Mochie マテリアル</strong>(混在運用)</li>
+<li><strong>プレハブ配置のロジックは <code>VillageImporter.cs</code> 内の <code>HousePrefabPaths</code> 配列で一元管理</strong></li>
+<li><strong>地面埋まりは bounds 自動 lift で対応</strong>(プレハブ差し替えに強い)</li>
+<li><strong>家の向き指定は <code>rotation_y</code> カスタムプロパティ推奨</strong>(Tiled 標準は左上 pivot で位置がズレるため)</li>
 </ul>
 
 
