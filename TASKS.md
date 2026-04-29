@@ -5,11 +5,13 @@ VRChat Fantasy World プロジェクトのタスク管理。
 
 ## Now (今やる) — 辺境の村 v0.2 環境構築中
 
+- [ ] **Tiled で家の向きをどう設定するかの運用方針を決める**(rotation_y / Tiled 標準回転 / テンプレート化 等)
+- [ ] 方針が決まったら家1〜4 の rotation_y を実際に設定して再 Import
 - [ ] AllSky Free から黄昏系 Skybox を 1-2 個に絞って Import、シーンに適用
 - [ ] Terrain に草・土・砂利の塗り分け(中央広場・道・川岸)
 - [ ] Tiled に 術式石①② / スポーン地点 / 見張り台 を追加配置 → 再Import
 - [ ] スポーン位置を村の門付近に調整
-- [ ] 仮アセット(Stylized Trees の家代わりや、別の建物アセット)で家プレハブを試す
+- [ ] 小屋(rpgpp_lt_shed_wood_*)を補助建物として配置するか検討
 - [ ] Build & Test で歩いてみる、容量再確認
 - [ ] マテリアルの TileSize を実機で見ながら微調整(タイル感が強ければ Mochie の Stochastic モードも検討)
 
@@ -71,3 +73,12 @@ VRChat Fantasy World プロジェクトのタスク管理。
 - [x] Mochie's Shader を導入、Mochie/Standard を辺境の村の標準シェーダーに採用 (2026-04-29)
 - [x] MaterialGenerator.cs を実装、Mochie/Standard Triplanar (World) マテリアルを自動生成 (2026-04-29)
 - [x] Cube UV 引き伸ばし問題を Triplanar で解消、TileSize 既定値を確定 (2026-04-29)
+- [x] 壁テクスチャを Cracked_Soil_16 → Asphalt_26 に変更(防壁の重厚感) (2026-04-29)
+- [x] 家テクスチャを Cracked_Soil_16 → Concrete_3 に変更(漆喰風) (2026-04-29)
+- [x] Detail レイヤーの方針を Stochastic 試行 → Triplanar 別テクスチャ大スケールに確定 (2026-04-29)
+- [x] 壁/家に Cracked_Soil_16 を Detail (5m, Mulx2/Overlay) で重ねて経年汚れ表現を追加 (2026-04-29)
+- [x] RPGPP_LT (RPG Poly Pack - Lite) を Asset Store から導入、Assets/RPGPP_LT/ に配置 (2026-04-30)
+- [x] RPGPP_LT の家プレハブ(Bld_closed/building_01〜05)と小屋(shed_wood_01〜02)の場所を特定 (2026-04-30)
+- [x] VillageImporter.cs に houses プレハブ自動配置を実装(building_01〜04 を循環) (2026-04-30)
+- [x] AUTO_LIFT_HOUSES で bounds.min.y を Y=0 に揃える地面埋まり自動補正を実装 (2026-04-30)
+- [x] rotation_y カスタムプロパティ対応を実装(機能のみ、Tiled 側の運用は保留) (2026-04-30)

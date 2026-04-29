@@ -7,7 +7,7 @@
 自作ファンタジー小説の世界観をビジュアル化することを目的に、VRChatワールドとして再構築するプロジェクト。
 小説の設定資料を docs に整理しつつ、Tiled でレイアウト設計、Unity で実装、mkdocs で可視化と進捗管理を一体運用する。
 
-**現在のフェーズ:** 辺境の村 v0.1 → v0.2 移行中。Tiled→Unity ブロックアウトに加え、Terrain 水路カービング・水面シェーダー(Stylized Water v1)・壁/家/畑/門 への Triplanar マテリアル適用まで完了(2026-04-29 時点)
+**現在のフェーズ:** 辺境の村 v0.2 環境構築中。Tiled→Unity ブロックアウト + Terrain 水路カービング + 水面シェーダー(Stylized Water v1) + 壁/家/畑/門 への Triplanar マテリアル + **houses レイヤーは RPGPP_LT 家プレハブを自動配置**まで完了(2026-04-30 時点)
 **主担当:** hoehoe
 **性格:** 個人実験プロジェクト、無理をしない、楽しさ優先
 
@@ -46,8 +46,10 @@
 - マテリアル生成: `unity/VRC-FantasyWorld-Unity/Assets/Editor/MaterialGenerator.cs`
 - レイヤー(walls/water/houses/crop_fields/gates_paths)ごとに `LayerMaterialPaths` でマテリアル割り当て
 - 高さは custom property `height_m` から取得、無ければレイヤーごとのデフォルト
+- Y回転は custom property `rotation_y` (度、Unity Y軸 CW) から取得、無ければ 0(プレハブ配置のみ有効)
 - `gates_paths` の門は **上部 lintel(まぐさ)だけ生成** して下を通り抜けられるよう調整
 - water レイヤーは Cube ではなく **Plane**(Stylized Water v1)を生成、Collider は除去
+- **houses レイヤーは Cube ではなく `HousePrefabPaths` のプレハブを順番に Instantiate**(RPGPP_LT building_01〜04 を循環)。`AUTO_LIFT_HOUSES` で地面埋まりを自動補正
 - `frontier-village.tmj.before-gates.backup` を Tiled の安全網として保持
 
 ## Novel プロジェクトとの関係
@@ -96,9 +98,19 @@
 - **Stylized Trees** — 樹木 Paint Trees 用
 - **AllSky Free** — Skybox 候補ライブラリ(黄昏系を選定中)
 - **Stylized Water v1** — 水面シェーダー(v2 は Built-in RP 非対応のため不採用)
-- **Free Realistic Textures** (Game Buffs) — 壁/家/畑/門のテクスチャ素材
-    - 採用: `Cracked_Soil_16`(壁・家)、`Forest_Ground_12`(畑)、`Wood_Planks_40`(門)
-- **Mochie's Shaders** — `Mochie/Standard` を採用。`_PrimarySampleMode = 3` (Triplanar) + `_TriplanarCoordSpace = 1` (World) で Cube どの面でも均等に貼れる。**標準シェーダー**として運用
+- **RPGPP_LT (RPG Poly Pack - Lite)** — 家・小屋・小道具・植物・岩のローポリ素材集
+    - 採用: 家4軒に `Bld_closed/rpgpp_lt_building_01〜04.prefab`(houses レイヤー自動配置)
+    - 全建物・小道具が `rpgpp_lt_tex_a.tga` テクスチャアトラスを共有 → ドローコール削減
+    - 1mesh/1material のシンプル構造、VRChat 親和性高
+- **Free Realistic Textures** (Game Buffs) — 壁/畑/門のテクスチャ素材
+    - 採用: `Asphalt_26`(壁)、`Forest_Ground_12`(畑)、`Wood_Planks_40`(門)
+    - `Concrete_3` は当初家用に選定したが、houses プレハブ化で現状未使用(Cube フォールバック時のみ使用)
+- **Mochie's Shaders** — `Mochie/Standard` を採用。**標準シェーダー**として運用
+    - Primary: `_PrimarySampleMode = 3` (Triplanar) + `_TriplanarCoordSpace = 1` (World) で Cube どの面でも均等に貼れる
+    - Detail: `_DetailSampleMode = 3` (Triplanar World) で **別テクスチャを大スケール(5m)で重ねる**。マクロな汚れ・経年変化レイヤー
+        - 壁: Asphalt_26 + Cracked_Soil_16 (Mulx2, 0.35)
+        - 家: Concrete_3 + Cracked_Soil_16 (Overlay, 0.25)
+    - 畑(賑やか)・門(均一性が美学)は Detail OFF
 - **Poiyomi Toon World** — インストール済だが、UV モードに Triplanar が無いため辺境の村では未採用。アバター・装飾用に温存
 
 ## リポジトリ運用方針
@@ -187,6 +199,10 @@
 | 2026-04-29 | 壁/家/畑/門のマテリアルは **Mochie/Standard の Triplanar (World)** で運用。`MaterialGenerator.cs` で自動生成 |
 | 2026-04-29 | Cube UV 引き伸ばし問題は Triplanar で解決。Poiyomi Toon World は Triplanar 非対応のため辺境の村では未採用 |
 | 2026-04-29 | TileSize 既定: 壁/家=0.8m, 畑=1.2m, 門=0.6m per repeat |
+| 2026-04-30 | 家のメッシュは **RPGPP_LT (RPG Poly Pack - Lite)** を採用(無料、ローポリ、テクスチャアトラス共有) |
+| 2026-04-30 | houses レイヤーは Cube ではなく **RPGPP_LT building_01〜04 を循環 Instantiate** に切り替え |
+| 2026-04-30 | プレハブ地面埋まりは **bounds.min.y を Y=0 に揃える自動 lift** で対処 |
+| 2026-04-30 | 家の Y回転は **`rotation_y` カスタムプロパティ**(度、Unity Y軸 CW)で指定する方針(実装済、運用は保留) |
 
 ## 未確定事項
 
@@ -195,3 +211,4 @@
 - ロゴの最終デザイン(現状はプレースホルダー、世界観固まり次第差し替え)
 - Quest 対応の有無
 - 第2ワールド以降の候補
+- **Tiled で家の向きをどう設定するかの運用方針**(rotation_y を毎回手で書く / テンプレート化 / Tiled 標準回転を許容するか 等)

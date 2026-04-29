@@ -71,6 +71,19 @@
     - 畑: 3.0m → **1.2m**
     - 門(木目): 2.0m → **0.6m**
 
+### テクスチャ差し替えと Detail レイヤー追加
+
+- 壁を `Cracked_Soil_16` → `Asphalt_26` に変更(防壁としての重厚感)
+- 家を `Cracked_Soil_16` → `Concrete_3` に変更(漆喰風)
+- 「タイル感が目立つ、ランダム感が欲しい」という課題に対して試行:
+    - 試行1: Mochie の **Stochastic Detail** (UV0) を Lerp で重ねた → タイル境界は消えるがテクスチャ内容自体は同じで、近くで見たときの「壁ごとの違い」は出ない
+    - 試行2(採用): Detail を **Triplanar (World) で別テクスチャを大スケールで重ねる**方式に変更
+- 採用した Detail 構成:
+    - 壁 = Asphalt_26 + **Cracked_Soil_16** (5m, Mulx2, 0.35) → 経年汚れの斑模様
+    - 家 = Concrete_3 + **Cracked_Soil_16** (5m, Overlay, 0.25) → 染みのコントラスト
+    - 畑/門は Detail なし
+- Detail も Triplanar (World) なので、**Cube のワールド座標が違えば Detail の当たる場所も違う** → 壁の節ごとに本当に見た目が変わる
+
 ### 詰まりどころ
 
 - **Tiled ファイルを誤って前のフォルダに保存して上書き** → `.backup` から復元
@@ -95,11 +108,13 @@
 - [ ] Tiled に 術式石①② / スポーン地点 / 見張り台 を追加
 - [ ] スポーン位置を村の門付近に
 - [ ] Build & Test で歩いて容量再確認
-- [ ] (好みで)Mochie の Stochastic モードでタイル感を曖昧化
+- [ ] (実機を見て)Detail Strength や TileSize を微調整
 
 ## 決定事項
 
 - **マテリアルは Mochie/Standard (Triplanar World) を標準とする**(Poiyomi は別用途で残す)
+- **壁=Asphalt_26 / 家=Concrete_3 / 畑=Forest_Ground_12 / 門=Wood_Planks_40** で確定
+- **Detail は別テクスチャを Triplanar 大スケールで重ねる**方式を採用(Stochastic は近距離での「場所ごとの差」が出ないため不採用)
 - **Tiled の `gates_paths` レイヤーは「上部 lintel」として描画する**(通り抜け可)
 - **Terrain Carver は Importer と同じ Y 反転式を使う**(座標規約を 1 箇所に集約する未来課題あり)
 - **Stylized Water は v1 を採用**(v2 は Built-in RP 非対応のため不採用)
